@@ -1,0 +1,13 @@
+
+
+
+
+function loadMarkers(){
+        {% for story in stories %}
+            var point = new google.maps.LatLng({{story.latitude}},{{story.longitude}});
+            var marker = new google.maps.Marker({
+            position: point,
+            map: map
+        });
+        {% endfor %}
+    }
